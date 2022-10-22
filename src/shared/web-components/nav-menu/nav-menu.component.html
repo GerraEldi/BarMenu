@@ -1,10 +1,28 @@
-<div> <span>Light</span>
-  <label class="switch">
-    <input type="checkbox" (click)="toggle()">
-    <span class="slider round"></span>
-  </label>
-  <span>Dark</span>
-</div>
+<nav class="navbar sticky-top">
+  <div class="container justify-content-space-between">
+    <div class="col-md-9 d-flex justify-content-start">
+      <div class="d-flex justify-content-space-between align-items-center">
+        <div class="col-sm-4">
+          <span class="dot"></span>
+        </div>
+        <div class="col-sm-8 ps-3">
+          <div class="brand">
+            {{businessName}}
+          </div>
+          <div class="menu">
+            {{nuis}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 d-flex justify-content-end">
+      <label class="switch">
+        <input type="checkbox" (click)="toggle()">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+</nav>
 <nav mat-tab-nav-bar>
   <a mat-tab-link *ngFor="let link of navMenuLinks" [routerLink]="link.link" routerLinkActive #rla="routerLinkActive"
     [active]="rla.isActive">

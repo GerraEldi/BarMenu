@@ -10,7 +10,9 @@ import { ProductsService } from 'src/services/products.service';
   styleUrls: ['./nav-menu.component.scss']
 })
 export class NavMenuComponent implements OnInit {
-
+  businessName!: string;
+  nuis!: string;
+  businessLogo!: string;
   constructor(
     private productsService: ProductsService,
     private themeService: ThemeService
@@ -25,10 +27,13 @@ export class NavMenuComponent implements OnInit {
   getMenuCategories(): void {
     this.productsService.getCategories().subscribe({
       next: (res) => {
+        this.businessName = res.businessName;
+        this.nuis = res.nuis
+        this.businessLogo = res.logo;
         res.categories.forEach(category => {
           this.navMenuLinks.push(
             {
-              label: category.name,
+              label: category.name.toUpperCase(),
               /**
          * the string methods applied to category name are made to format the name of the categories in the json file before setting them as a path
          * the empty spaces are replaced with "-" and the extra "/" are removed so we don't receive path errors
