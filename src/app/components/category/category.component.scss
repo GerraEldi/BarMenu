@@ -1,0 +1,14 @@
+.product-wrapper {
+    .product {
+        height: 195px !important;
+        width: 195px !important;
+
+        .product-details {
+            // display: flex; 
+            justify-content: flex-end;
+            color: #666666;
+            transform: rotate(-90deg);
+        }
+    }
+
+}

@@ -1,12 +1,23 @@
-<div class="card-group">
 
-<div *ngFor="let product of productsList" class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <p class="card-text">{{product.name}}
-        <br>
-        {{product.unitPrice}}
-      </p>
+<div  fxLayout="row wrap" class="product-wrapper">
+    <div fxFlex="20%" fxFlex.xs="50%" fxFlex.sm="33%" *ngFor="let product of productsList" [ngStyle]="{'background-color':getRandomColor()}" class="card product"  (click)="openTemplateSheetMenu()">
+        <!-- <div class="card-body "> -->
+            <!-- <p class="card-text ">{{product.name}}
+                {{product.unitPrice}}
+            </p> -->
+            <div class="product-details">
+                <!-- <span>{{product.name}}</span> -->
+               {{product.unitPrice}} &nbsp; leke
+            </div>
+        <!-- </div> -->
     </div>
-  </div>
-  </div>
+</div>
+
+<ng-template let-bottomSheetRef="bottomSheetRef" #templateBottomSheet>
+    <ul>
+        <li>Link 1</li>
+        <li>Link 2</li>
+        <li>Link 3</li>
+        <li><button (click)="closeTemplateSheetMenu()">Dismiss Action Sheet</button></li>
+    </ul>
+</ng-template>
