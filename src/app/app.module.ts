@@ -3,18 +3,26 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { NavMenuComponent } from 'src/shared/web-components/nav-menu/nav-menu.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductsService } from 'src/services/products.service';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavMenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    BrowserModule
+    BrowserModule,
+    MatTabsModule,
+    MatGridListModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
