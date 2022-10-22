@@ -1,1 +1,12 @@
-<p>category works!</p>
+<div class="card-group">
+
+<div *ngFor="let product of productsList" class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">{{product.name}}
+        <br>
+        {{product.unitPrice}}
+      </p>
+    </div>
+  </div>
+  </div>

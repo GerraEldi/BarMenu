@@ -8,7 +8,9 @@ import { Observable } from 'rxjs';
 export class ProductsService {
 
 constructor(private http: HttpClient) { }
-
+  /**
+   * GET request to receive all data from the json file and return an Observable of type Bar.
+   */
   getCategories():Observable<Bar>{
     return this.http.get<Bar>('https://test.dev.al/test/');
   }
