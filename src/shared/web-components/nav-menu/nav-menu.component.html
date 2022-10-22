@@ -1,13 +1,13 @@
-<!-- <mat-tab-group>
-  <mat-tab *ngFor="let category of menuCategories" label="{{category.name}}" [routerLink]="category.name">{{category}}</mat-tab>
-</mat-tab-group> -->
-
+<div> <span>Light</span>
+  <label class="switch">
+    <input type="checkbox" (click)="toggle()">
+    <span class="slider round"></span>
+  </label>
+  <span>Dark</span>
+</div>
 <nav mat-tab-nav-bar>
-  <a mat-tab-link
-  *ngFor="let link of navMenuLinks"
-  [routerLink]="link.link"
-  routerLinkActive #rla="routerLinkActive"
-  [active]="rla.isActive"> 
-  {{link.label}}
+  <a mat-tab-link *ngFor="let link of navMenuLinks" [routerLink]="link.link" routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive">
+    {{link.label}}
   </a>
-  </nav>
+</nav>

@@ -8,6 +8,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsService } from 'src/services/products.service';
+import { ThemeModule } from './themes/theme.module';
+import { darkTheme } from './themes/dark-theme';
+import { lightTheme } from './themes/light-theme';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,11 @@ import { ProductsService } from 'src/services/products.service';
     BrowserModule,
     MatTabsModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    ThemeModule.forRoot({
+      themes: [lightTheme, darkTheme],
+      active: 'light'
+    })
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
