@@ -6,7 +6,7 @@ button {
     position: relative;
     display: inline-block;
     height: 34px;
-    margin: 0 5px;
+    margin: 0 40px;
 }
 
 .switch input {
@@ -73,5 +73,15 @@ input:checked+.slider:before {
 }
 
 .brand {
+    font-weight: bold;
+}
+
+.mat-tab-link.mat-focus-indicator.category-name {
+    color: var(--on-background);
+    font-family: var(--font-family);
+}
+
+.mat-tab-link.mat-focus-indicator.category-name.mat-tab-label-active {
+    color: var(--active-color);
     font-weight: bold;
 }

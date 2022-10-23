@@ -24,8 +24,8 @@
   </div>
 </nav>
 <nav mat-tab-nav-bar>
-  <a mat-tab-link *ngFor="let link of navMenuLinks" [routerLink]="link.link" routerLinkActive #rla="routerLinkActive"
-    [active]="rla.isActive">
+  <a mat-tab-link class="category-name" *ngFor="let link of navMenuLinks" [routerLink]="link.link" routerLinkActive
+    #rla="routerLinkActive" [active]="rla.isActive">
     {{link.label}}
   </a>
 </nav>

@@ -7,5 +7,7 @@ export const darkTheme: Theme = {
     '--on-background': '#fff',
     '--primary': 'darkorange',
     '--on-primary': '#fff',
+    '--active-color': 'red',
+    '--font-family': 'Helvetica'
   }
 }
