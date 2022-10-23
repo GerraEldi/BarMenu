@@ -1,17 +1,12 @@
 <div fxLayout="row wrap" class="product-wrapper">
     <div fxFlex="20%" fxFlex.xs="50%" fxFlex.sm="33%" *ngFor="let product of productsList"
         [ngStyle]="{'background-color': product.backgroundColor}" class="card product" (click)="orderProducts(product)">
-        <!-- <div class="card-body "> -->
-        <!-- <p class="card-text ">{{product.name}}
-                {{product.unitPrice}}
-            </p> -->
         <span class="product-first-letter">{{ product.name[0]|titlecase }}</span>
         <div class="product-price">
             <div class="product-price-amount">{{product.unitPrice}} </div>
             <div>&nbsp; leke</div>
         </div>
         <span class="product-name">{{product.name}}</span>
-        <!-- </div> -->
     </div>
 </div>
 
@@ -31,7 +26,6 @@
                             {{product.price}}
                         </span>
                     </div>
-                    <!-- <input type="text" class="form-control" [()] readonly="true"> -->
                 </div>
             </div>
             <div class="row justify-content-around total pt-2 pb-3">
@@ -44,9 +38,31 @@
             </div>
             <div class="row px-0">
                 <div class="col-12 d-flex justify-content-center pe-0">
-                    <button type="submit" class="btn btn-danger submit-button" (click)="onSubmit()">DERGO FATUREN</button>
+                    <button type="button" class="btn btn-danger submit-button" (click)="onSubmit()"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">DERGO
+                        FATUREN</button>
                 </div>
             </div>
         </form>
     </div>
 </ng-template>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content close-bill">
+            <div class="modal-body">
+                <div class="row pb-3">
+                    <div class="col-12 text-center fw-bold success-message">
+                        FATURA U DERGUA ME SUKSES!
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <button type="button" class="btn btn-danger submit-button" data-bs-dismiss="modal"
+                            aria-label="MBYLL">MBYLL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
