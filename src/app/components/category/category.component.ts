@@ -99,13 +99,12 @@ export class CategoryComponent implements OnInit {
   /**
    * Generates random colors for each product card.
    */
-  getRandomColor() {
+  getRandomColor():string {
     let letters = '0123456789ABCDEF';
     let color = '#';
     for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
-    console.log(color);
     return color;
   }
 }
