@@ -3,11 +3,28 @@
         height: 195px !important;
         width: 195px !important;
 
-        .product-details {
-            // display: flex; 
-            justify-content: flex-end;
-            color: #666666;
-            transform: rotate(-90deg);
+        .product-price {
+            width: 20px;
+            height: 100px;
+            align-self: end;
+            writing-mode: tb-rl;
+            transform: rotate(-180deg);
+            position: relative;
+            span {
+                position: absolute;
+              }
+        }
+        .product-name{
+            width: 100px;
+            height: 20px;
+            top: 35%;
+            // align-self: end;
+            // writing-mode: rl-tb;
+            // transform: rotate(-180deg);
+            position: relative;
+            span {
+                position: absolute;
+              }
         }
     }
 

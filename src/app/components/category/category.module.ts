@@ -15,7 +15,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     CategoryRoutingModule,
     MatBottomSheetModule,
-    BillDetailsPopupModule,
     FlexLayoutModule
   ]
 })

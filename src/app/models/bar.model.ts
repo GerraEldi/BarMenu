@@ -12,6 +12,12 @@ export interface Category {
 export interface Product {
     name: string;
     unitPrice: number;
+    backgroundColor?:string;
+}
+export interface OrderedProduct {
+    name: string;
+    price: number;
+    quantity: number;
 }
 
 
