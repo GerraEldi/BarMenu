@@ -1,24 +1,16 @@
-
-
-
-<div  fxLayout="row wrap" class="product-wrapper">
-    <div 
-    fxFlex="20%"
-    fxFlex.xs="50%" 
-    fxFlex.sm="33%" 
-    *ngFor="let product of productsList" 
-    [ngStyle]="{'background-color':getRandomColor()}" 
-    class="card product"  
-    (click)="orderProducts(product)">
+<div fxLayout="row wrap" class="product-wrapper">
+    <div fxFlex="20%" fxFlex.xs="50%" fxFlex.sm="33%" *ngFor="let product of productsList"
+        [ngStyle]="{'background-color': product.backgroundColor}" class="card product" (click)="orderProducts(product)">
         <!-- <div class="card-body "> -->
-            <!-- <p class="card-text ">{{product.name}}
+        <!-- <p class="card-text ">{{product.name}}
                 {{product.unitPrice}}
             </p> -->
-            <span class="product-price">
-                <!-- <span>{{product.name}}</span> -->
-               {{product.unitPrice}} &nbsp; leke
-            </span>
-                <span class="product-name">{{product.name}}</span>
+        <span class="product-first-letter">{{product.name.substring(0, 1)}}</span>
+        <div class="product-price">
+            <div class="product-price-amount">{{product.unitPrice}} </div>
+            <div>&nbsp; leke</div>
+        </div>
+        <span class="product-name">{{product.name}}</span>
         <!-- </div> -->
     </div>
 </div>
@@ -27,12 +19,12 @@
     <div class="container">
         <form>
             <div *ngFor="let product of orderedProducts" class="form-group">
-              <!-- <input type="text" class="form-control" [()] readonly="true"> -->
-              <span>{{product.name}}      {{product.quantity}}            {{product.price}}</span>
+                <!-- <input type="text" class="form-control" [()] readonly="true"> -->
+                <span>{{product.name}} {{product.quantity}} {{product.price}}</span>
             </div>
             <span>{{totalPrice}}</span>
             <br>
             <button type="submit" class="btn btn-danger" (click)="onSubmit()">DERGO FATUREN</button>
-          </form>
+        </form>
     </div>
 </ng-template>

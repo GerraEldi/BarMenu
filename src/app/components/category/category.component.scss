@@ -10,9 +10,29 @@
             writing-mode: tb-rl;
             transform: rotate(-180deg);
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             span {
                 position: absolute;
             }
+
+            .product-price-amount {
+                color: red;
+            }
+        }
+
+        .product-first-letter {
+            position: relative;
+            font-family: 'Londrina Outline';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 104px;
+            color: rgba(255, 255, 255, 0.15);
+            transform: rotate(17.11deg);
+            left: 20px;
+            top: 90px;
         }
 
         .product-name {
@@ -20,6 +40,7 @@
             height: 20px;
             top: 48px;
             position: relative;
+            left: 7px;
 
             span {
                 position: absolute;
@@ -27,4 +48,8 @@
         }
     }
 
+    .card {
+        --bs-card-border-radius: 0;
+        border: unset;
+    }
 }

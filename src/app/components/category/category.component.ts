@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Category, OrderedProduct, Product } from 'src/app/models/bar.model';
 import { ProductsService } from 'src/services/products.service';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
+// import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
@@ -17,7 +18,8 @@ export class CategoryComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private productsService: ProductsService,
-    private bottomSheet: MatBottomSheet
+    private bottomSheet: MatBottomSheet,
+    // public dialog: MatDialog
   ) { }
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -33,7 +35,14 @@ export class CategoryComponent implements OnInit {
     this.productsService.getCategories().subscribe({
       next: (res) => {
         let filteredResults = res.categories.filter((category: Category) => {
-          return category.name.toLowerCase().split(' ').join('-').split('/').join('') == categoryName;
+          return this.productsService.modifyString(category.name) == categoryName;
+        })
+        filteredResults[0].products = filteredResults[0].products.map((product) => {
+          return {
+            name: product.name,
+            unitPrice: product.unitPrice,
+            backgroundColor: this.getRandomColor() // bind the background color to each individual product
+          }
         })
         this.productsList = filteredResults[0].products;
       }, error(err) {
@@ -46,35 +55,22 @@ export class CategoryComponent implements OnInit {
    */
   orderProducts(selectedProduct: Product): void {
     this.bottomSheet.open(this.TemplateBottomSheet);
-    let index = -1;
-    if (this.orderedProducts.length != 0) {
-      for (let i = 0; i < this.orderedProducts.length; i++) {
-        if (this.orderedProducts[i].name == selectedProduct.name) {
-          index = i;
-        }
+    const index = this.orderedProducts.findIndex((product) => product.name === selectedProduct.name)
+
+    if (index > -1) { // item already exists on our orderlist
+      this.orderedProducts[index] = {
+        name: this.orderedProducts[index].name,
+        price: this.orderedProducts[index].price += selectedProduct.unitPrice,
+        quantity: this.orderedProducts[index].quantity += 1
       }
-      if (index > -1) {
-        this.orderedProducts[index] = {
-          name: this.orderedProducts[index].name,
-          price: this.orderedProducts[index].price += selectedProduct.unitPrice,
-          quantity: this.orderedProducts[index].quantity += 1
-        };
-      } else {
-        this.orderedProducts.push({
-          name: selectedProduct.name,
-          price: selectedProduct.unitPrice,
-          quantity: 1
-        })
-      }
-    } else {
-      this.orderedProducts.push(
-        {
-          name: selectedProduct.name,
-          price: selectedProduct.unitPrice,
-          quantity: 1
-        }
-      );
+    } else { // item doesn't exists so we add it
+      this.orderedProducts.push({
+        name: selectedProduct.name,
+        price: selectedProduct.unitPrice,
+        quantity: 1
+      })
     }
+
     this.getTotalPrice(this.orderedProducts);
     console.log(this.orderedProducts);
     console.log(this.totalPrice);
@@ -91,6 +87,11 @@ export class CategoryComponent implements OnInit {
   }
   onSubmit() {
     this.orderedProducts = [];
+    //   this.dialog.open(DialogAnimationsExampleDialog, {
+    //     width: '250px',
+    //     enterAnimationDuration,
+    //     exitAnimationDuration,
+    //   });
   }
 
   closeTemplateSheetMenu() {
@@ -99,7 +100,7 @@ export class CategoryComponent implements OnInit {
   /**
    * Generates random colors for each product card.
    */
-  getRandomColor():string {
+  getRandomColor(): string {
     let letters = '0123456789ABCDEF';
     let color = '#';
     for (let i = 0; i < 6; i++) {
