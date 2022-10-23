@@ -8,6 +8,7 @@ export const lightTheme: Theme = {
         '--primary': '#1976d2',
         '--on-primary': '#000',
         '--active-color': 'red',
-        '--font-family': 'Helvetica'
-    }
+        '--font-family': 'Helvetica',
+        '--on-box-shadow': '1',
+    },
 };

@@ -81,6 +81,7 @@ input:checked+.slider:before {
 .mat-tab-link.mat-focus-indicator.category-name {
     color: var(--on-background);
     font-family: var(--font-family);
+    font-weight: bold;
 }
 
 .mat-tab-link.mat-focus-indicator.category-name.mat-tab-label-active {

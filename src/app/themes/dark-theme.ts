@@ -8,6 +8,7 @@ export const darkTheme: Theme = {
     '--primary': 'darkorange',
     '--on-primary': '#fff',
     '--active-color': 'red',
-    '--font-family': 'Helvetica'
-  }
-}
+    '--font-family': 'Helvetica',
+    '--on-box-shadow': '0.5',
+  },
+};

@@ -2,7 +2,7 @@
     .product {
         height: 195px !important;
         width: 195px !important;
-
+        opacity: var(--on-box-shadow);
         .product-price {
             width: 20px;
             height: 100px;
@@ -20,12 +20,13 @@
 
             .product-price-amount {
                 color: red;
+                font-weight: bold;
             }
         }
 
         .product-first-letter {
             position: relative;
-            font-family: 'Londrina Outline';
+            font-family: 'Helvetica';
             font-style: normal;
             font-weight: 400;
             font-size: 104px;
@@ -38,10 +39,12 @@
         .product-name {
             width: 200px;
             height: 20px;
-            top: 48px;
+            top: 33px;
             position: relative;
-            left: 7px;
-
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-left: 10px;
             span {
                 position: absolute;
             }

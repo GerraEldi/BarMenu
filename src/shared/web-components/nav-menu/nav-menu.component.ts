@@ -34,12 +34,7 @@ export class NavMenuComponent implements OnInit {
           this.navMenuLinks.push(
             {
               label: category.name.toUpperCase(),
-              /**
-         * the string methods applied to category name are made to format the name of the categories in the json file before setting them as a path
-         * the empty spaces are replaced with "-" and the extra "/" are removed so we don't receive path errors
-         * for example "Food Menu/Snacks" will be formatted into "food-menu-snacks"
-         */
-              link: '/category/' + category.name.toLowerCase().split(' ').join('-').split('/').join('')
+              link: '/category/' + this.productsService.modifyString(category.name)
             }
           )
         });
