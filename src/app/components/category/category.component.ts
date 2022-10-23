@@ -23,7 +23,6 @@ export class CategoryComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       let categoryName = params.get("name");
-      console.log(categoryName);
       this.filterProductsByCategory(categoryName);
     })
   }
@@ -71,8 +70,6 @@ export class CategoryComponent implements OnInit {
     }
 
     this.getTotalPrice(this.orderedProducts);
-    console.log(this.orderedProducts);
-    console.log(this.totalPrice);
   }
   /**
    * Receives the ordered products array and calculates the total price of products.
