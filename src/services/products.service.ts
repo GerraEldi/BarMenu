@@ -14,7 +14,7 @@ export class ProductsService {
   getCategories(): Observable<Bar> {
     return this.http.get<Bar>('https://test.dev.al/test/');
   }
-  
+
   /**
     * replace empty spaces with "-" and remove "/"
     * for example "Food Menu/Snacks" will be formatted into "food-menu-snacks"

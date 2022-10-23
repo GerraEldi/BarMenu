@@ -4,7 +4,6 @@ import { CategoryRoutingModule } from './category-routing.module';
 import { CategoryComponent } from './category.component';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { FlexLayoutModule } from '@angular/flex-layout';
-// import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -14,8 +13,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     CategoryRoutingModule,
     MatBottomSheetModule,
-    FlexLayoutModule,
-    // MatDialogModule
+    FlexLayoutModule
   ]
 })
 export class CategoryModule { }

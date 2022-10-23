@@ -1,4 +1,4 @@
-export interface MenuLinks{
-    link:string,
-    label:string
+export interface MenuLinks {
+    link: string,
+    label: string
 }
