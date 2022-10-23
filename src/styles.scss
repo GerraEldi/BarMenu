@@ -44,3 +44,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 div.mat-tab-header-pagination-chevron {
   border-color: var(--on-background);
 }
+
+.mat-tab-links {
+  justify-content: center;
+}

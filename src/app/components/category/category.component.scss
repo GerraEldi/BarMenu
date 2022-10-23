@@ -3,6 +3,7 @@
         height: 195px !important;
         width: 195px !important;
         opacity: var(--on-box-shadow);
+
         .product-price {
             width: 20px;
             height: 100px;
@@ -45,6 +46,7 @@
             font-size: 13px;
             text-transform: uppercase;
             margin-left: 10px;
+
             span {
                 position: absolute;
             }
@@ -56,15 +58,18 @@
         border: unset;
     }
 }
+
 .submit-button {
     border-radius: unset;
     background-color: red;
     width: 100%;
 }
+
 .price {
     color: red;
     font-weight: bold;
 }
+
 .products {
     border-bottom: 1px solid grey;
 }

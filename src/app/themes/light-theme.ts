@@ -10,5 +10,6 @@ export const lightTheme: Theme = {
         '--active-color': 'red',
         '--font-family': 'Helvetica',
         '--on-box-shadow': '1',
+        '--navbar-background': 'white'
     },
 };

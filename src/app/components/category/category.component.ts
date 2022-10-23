@@ -87,11 +87,6 @@ export class CategoryComponent implements OnInit {
   }
   onSubmit() {
     this.orderedProducts = [];
-    //   this.dialog.open(DialogAnimationsExampleDialog, {
-    //     width: '250px',
-    //     enterAnimationDuration,
-    //     exitAnimationDuration,
-    //   });
   }
 
   closeTemplateSheetMenu() {

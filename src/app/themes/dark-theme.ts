@@ -10,5 +10,6 @@ export const darkTheme: Theme = {
     '--active-color': 'red',
     '--font-family': 'Helvetica',
     '--on-box-shadow': '0.5',
+    '--navbar-background': '#1F2125'
   },
 };
